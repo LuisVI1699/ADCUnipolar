@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/style.css" type="text/css">
+    <title>Practica 1</title>
+</head>
+<body>
+    <h1 align="center">Practica 1</h1>
+    <h2>Simulación de ADC unipolar</h2>
+    <br>
+    <div class="parametros">
+    <label class="tipoADC">Tipo de ADC:</label>
+    <select id="ADC" name="ADC">
+            <option value="rampa">Rampa</option>
+            <option value="aproximaciones">Aproximaciones Sucesivas</option>
+    </select>
+    <br>
+    <label class="radio" for = "bits">Bits(n):</label>
+    <input class="radio" type="text" id="bits"  placeholder="8, 10, 12, 16, 20">
+    <br>
+    <label class="radio" for = "Vref">Voltaje de referencia (+ Vref):</label>
+    <input  class="radio"  type="text" id="Vref"  placeholder="+5, +3.8, +1.8"><a> Volts</a>
+    <br>
+    <label class="radio" for = "Frecuencia">Frecuencia de reloj:</label>
+    <input class="radio" type="text" id="Frecuencia">
+    <select id="orden" name="orden">
+        <option value="kilos">KHz</option>
+        <option value="Megas">MHz</option>
+    </select>
+    </div>
+    <br>
+    <button class="iniciar">On</button>
+    
+    <footer class="footer" id="contacto">
+        <div class="contenedor">
+            <div class="developers">
+                <h4 class="brand">Desarrollado por:</h4>
+                <p class="brand">García Jauregui Israel</p>
+                <p class="brand">Vila Solis Luis Manuel</p>
+                <p class="brand">Vargas Vidal Balam</p>
+            </div>
+            <div class="icons">
+                <a>
+                    <img class="imagen" src="Img/LogoEsime.png" alt=""> 
+                </a>       
+            </div>
+        <div class="line"></div>
+            <p class="copy">Copyrigth © 2021 All Rights Reserverd</p>
+    </div>
+    </footer>  
+</body>
+<script src="JS/"></script>
+</html>
