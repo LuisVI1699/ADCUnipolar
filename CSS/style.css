@@ -38,6 +38,9 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+.iniciar.on{
+    background-color: #2ee43d;
+}
 .iniciar:active {
     background-color: #ce6767;
     box-shadow: 0px 5px rgb(231, 228, 228);
@@ -74,7 +77,6 @@ select{
 }
 .line{
     width: 90%;
-    max-width: 1200px;
     margin: 0 auto;
     height: 2px;
     background: rgb(24, 23, 23);
@@ -114,8 +116,14 @@ img{
     h1,h2{
         font-size: 3rem;
     }
+    h3{
+        font-size: 2.4rem;
+    }
     body{
         font-size: 1.5rem;
+    }
+    .parametros{
+        width: 95%;
     }
     .radio{
         width: 200px;
@@ -134,6 +142,9 @@ img{
     .icons{
         width: 100%;
         justify-content: center;
+    }
+    .line{
+        margin-top: 20px;
     }
     
 }

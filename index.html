@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/style.css" type="text/css">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <title>Practica 1</title>
 </head>
 <body>
     <h1 align="center">Practica 1</h1>
     <h2>Simulación de ADC unipolar</h2>
     <br>
-    <div class="parametros">
+    <div class="parametros" id = "parametros">
     <label class="tipoADC">Tipo de ADC:</label>
     <select id="ADC" name="ADC">
             <option value="rampa">Rampa</option>
@@ -19,21 +21,52 @@
     </select>
     <br>
     <label class="radio" for = "bits">Bits(n):</label>
-    <input class="radio" type="text" id="bits"  placeholder="8, 10, 12, 16, 20">
+    <select class="radio" id="bits" name="bits">
+        <option value="8">8</option>
+        <option value="10">10</option>
+        <option value="12">12</option>
+        <option value="16">16</option>
+        <option value="20">20</option>
+    </select>
     <br>
     <label class="radio" for = "Vref">Voltaje de referencia (+ Vref):</label>
-    <input  class="radio"  type="text" id="Vref"  placeholder="+5, +3.8, +1.8"><a> Volts</a>
+    <select class="radio" id="Vref" name="Vref">
+        <option value="5">5</option>
+        <option value="3.8">3.8</option>
+        <option value="1.8">1.8</option>
+    </select>
+    <a> Volts</a>
     <br>
-    <label class="radio" for = "Frecuencia">Frecuencia de reloj:</label>
-    <input class="radio" type="text" id="Frecuencia">
+    <label class="radio" for="Frecuencia">Frecuencia de reloj:</label>
+    <input class="radio" type="number" id="frec">
     <select id="orden" name="orden">
+        <option value="Hertz">Hz</option>
         <option value="kilos">KHz</option>
         <option value="Megas">MHz</option>
     </select>
+    <br>
+    <label class="radio">Tiempo de escritura (twr):</label>
+    <input class="radio" type="number" id="tiempo">
+    <select id="Formatiempo" name="Formatiempo">
+        <option value="Segundos">Segundos</option>
+        <option value="Minutos">Minutos</option>
+    </select>
     </div>
     <br>
-    <button class="iniciar">On</button>
-    
+    <button class="iniciar" id = "iniciar">ON/OFF</button>
+    <br>
+    <div id="results" style="display: none">
+            <h3>Introduce el voltaje analógico de entrada en tiempo real:</h3>
+            <label>Voltaje de entrada (Va):</label>
+            <input class="radio" type="number" id="Ventrada" value="0"><a> Volts</a><br>
+            <br>
+            <br>
+            <div class="shadow-lg p-3 mb-5 bg-body rounded" id = 'datodec'></div>
+            <div class="shadow-lg p-3 mb-5 bg-body rounded" id = 'datobin'></div>
+            <div class="shadow-lg p-3 mb-5 bg-body rounded" id = 'tconversion'></div>
+            <div class="shadow-lg p-3 mb-5 bg-body rounded" id = 'bps'></div>
+            <div class="shadow-lg p-3 mb-5 bg-body rounded" id = 'espacio'></div>
+    </div>
     <footer class="footer" id="contacto">
         <div class="contenedor">
             <div class="developers">
@@ -51,6 +84,7 @@
             <p class="copy">Copyrigth © 2021 All Rights Reserverd</p>
     </div>
     </footer>  
+    
+<script src="JS/ADC.js"></script>
 </body>
-<script src="JS/"></script>
 </html>
