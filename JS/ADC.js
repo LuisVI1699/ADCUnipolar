@@ -14,8 +14,7 @@ class ADC{
             this.tconver = Math.pow(2,this.bits)*(1/this.reloj);    
         } 
         else{
-
-            this.tconver = (this.bits+1)*(1/this.reloj);
+            this.tconver = (parseInt(this.bits)+1)*(1/this.reloj);
         }
     }
     Dato10(Va){
