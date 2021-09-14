@@ -1,6 +1,6 @@
 
 var botonon = document.getElementById('iniciar');
-
+var cerrarpopup = document.getElementById('cerrarpopup');
 class ADC{
     constructor(bits, reloj, tipo, vref){
         this.bits = bits;
@@ -48,12 +48,13 @@ $("#Ventrada").on("change keyup paste", function(){
 })
 
 function iniciar(){
+    let ventrada = document.getElementById('Ventrada').value;
+    if(ventrada <= 5){
     let tipo = document.getElementById('ADC').value;
     let bits = document.getElementById('bits').value;
     let vref = document.getElementById('Vref').value;
     let orden = document.getElementById('orden').value;
     let Formatiempo = document.getElementById('Formatiempo').value;
-    let ventrada = document.getElementById('Ventrada').value;
     let frec = document.getElementById('frec').value;
     let Tiempo = document.getElementById('tiempo').value;
     if (orden == 'kilos')
@@ -74,7 +75,16 @@ function iniciar(){
     document.getElementById('datobin').innerHTML = "Dato de salida en Binario = " + A.Dato10(ventrada).toString(2);
     document.getElementById('tconversion').innerHTML = "Tiempo de conversión = " + A.tconver + " segundos";
     document.getElementById('bps').innerHTML = "Bits/segundo = " + A.bitsPerSeconds(1/A.tconver)+ " bps";
-    document.getElementById('espacio').innerHTML = "Espacio = " + A.twr(A.bitsPerSeconds(1/A.tconver),Tiempo) + " Bytes";
+    document.getElementById('espacio').innerHTML = "Espacio = " + A.twr(A.bitsPerSeconds(1/A.tconver),Tiempo) + " MBytes";
+}
+else{
+    overlay.classList.add('active');
+    popup.classList.add('active');
+}
 }
 
 
+cerrarpopup.addEventListener('click', function(){
+    overlay.classList.remove('active');
+    popup.classList.remove('active');
+});
