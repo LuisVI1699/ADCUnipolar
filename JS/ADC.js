@@ -69,11 +69,12 @@ function iniciar(){
         Tiempo = Tiempo * 60;
     }
     const A = new ADC(bits,frec,tipo,vref);
+    alert(A.error)
     document.getElementById('datodec').innerHTML = "Dato de salida en Decimal = " + A.Dato10(ventrada);
     document.getElementById('datobin').innerHTML = "Dato de salida en Binario = " + A.Dato10(ventrada).toString(2);
     document.getElementById('tconversion').innerHTML = "Tiempo de conversión = " + A.tconver + " segundos";
     document.getElementById('bps').innerHTML = "Bits/segundo = " + A.bitsPerSeconds(1/A.tconver)+ " bps";
-    document.getElementById('espacio').innerHTML = "Espacio = " + A.twr(A.bitsPerSeconds(frec),Tiempo) + " Bytes";
+    document.getElementById('espacio').innerHTML = "Espacio = " + A.twr(A.bitsPerSeconds(1/A.tconver),Tiempo) + " Bytes";
 }
 
 
