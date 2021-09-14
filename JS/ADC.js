@@ -70,7 +70,7 @@ function iniciar(){
         Tiempo = Tiempo * 60;
     }
     const A = new ADC(bits,frec,tipo,vref);
-    Console.log(A.error)
+    console.log(A.error)
     document.getElementById('datodec').innerHTML = "Dato de salida en Decimal = " + A.Dato10(ventrada);
     document.getElementById('datobin').innerHTML = "Dato de salida en Binario = " + A.Dato10(ventrada).toString(2);
     document.getElementById('tconversion').innerHTML = "Tiempo de conversión = " + A.tconver + " segundos";
